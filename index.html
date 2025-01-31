@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Goodnight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Supherhero">
+    <meta name="keywords" content="programming hero,learn programming">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    
+
+    <!--custom css-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <h3></h3>
+
+    
+
+</div>
+
+
+
+
+
+<!--main js-->
+<script src="js/main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Good Night - Coletech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #fff;
+            overflow: hidden;
+            padding: 50px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            height: 100vh;
+            position: relative;
+        }
+
+        .luxury-mode {
+            background: linear-gradient(to right, #3b4a72, #1d2d45);
+            color: #ffcc00;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ff6347;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ff4500;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-size: cover;
+            animation: starsAnimation 100s linear infinite;
+        }
+
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #fff;
+            animation: moonAnim 5s infinite alternate;
+        }
+
+        .clouds {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            height: 40%;
+            background: url('https://www.transparenttextures.com/patterns/cloudy.png');
+            background-size: cover;
+            animation: cloudMove 20s linear infinite;
+        }
+
+        .message {
+            font-size: 40px;
+            line-height: 1.8;
+            padding: 50px;
+            color: #ffcc00;
+            opacity: 0;
+            animation: revealMessage 4s ease-out forwards;
+            animation-delay: 1s;
+            text-align: left;
+            margin-left: 10%;
+            margin-right: 10%;
+            max-width: 80%;
+            position: relative;
+        }
+
+        .message h1 {
+            font-size: 60px;
+            color: #ffcc00;
+            text-shadow: 0 0 25px #ffcc00, 0 0 50px #ffcc00;
+        }
+
+        .message p {
+            font-size: 28px;
+            color: #f5f5f5;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        .message .highlight {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .candle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 100px;
+            background-color: #ffcc00;
+            border-radius: 20px;
+            box-shadow: 0 0 15px #ff6347;
+            animation: flicker 2s infinite;
+        }
+
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        .floating-particles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            animation: particlesAnimation 5s ease-in-out infinite;
+        }
+
+        .floating-particles div {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleMovement 10s infinite;
+        }
+
+        @keyframes revealMessage {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes cloudMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        @keyframes starsAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 15px #ff6347, 0 0 30px #ff6347; }
+            100% { text-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes particleMovement {
+            0% { opacity: 0; transform: translate(-50%, -50%); }
+            100% { opacity: 1; transform: translate(150px, -150px); }
+        }
+    </style>
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleLuxuryMode()">Toggle Luxury Mode</button>
+
+<div class="stars"></div>
+<div class="clouds"></div>
+<div class="moon"></div>
+
+<div class="message">
+    <h1>Good Night, Sleep Tight!</h1>
+    <p>"As the night sky blankets the world, it's time to rest. Let go of the stress, and drift into a world of dreams. May you wake refreshed and full of new energy."</p>
+    <p class="highlight">"May tomorrow shine brighter and bring you closer to your dreams."</p>
+    <p>"Close your eyes, and let your heart be at peace. Good night, sleep well."</p>
+    <p>- Coletech</p>
+</div>
+
+<div class="candle"></div>
+
+<div class="floating-particles">
+    <div style="top: 10%; left: 20%;"></div>
+    <div style="top: 30%; left: 40%;"></div>
+    <div style="top: 60%; left: 50%;"></div>
+    <div style="top: 80%; left: 70%;"></div>
+    <div style="top: 40%; left: 80%;"></div>
+</div>
+
+<script>
+    let luxuryMode = false;
+    
+    function toggleLuxuryMode() {
+        luxuryMode = !luxuryMode;
+        document.body.classList.toggle('luxury-mode');
+    }
+
+    // Adjustments to the scrolling reveal
+    let message = document.querySelector('.message');
+    window.addEventListener('load', () => {
+        message.style.opacity = 1;
+        message.style.transform = 'translateY(0)';
+    });
+</script>
+
+</body>
+</html>
